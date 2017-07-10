@@ -73,4 +73,6 @@ func writeLog(level string, m string) {
         var logger = log.New(&buf, "logger::", (log.Ldate | log.Ltime | log.Lmicroseconds)) // Instance log with specific prefix and flags.
         logger.Print(level+"::"+m) // Print log to buffer
         fmt.Print(&buf) // throw log from buffer to file.
+        buf.Reset()        
 }
+
